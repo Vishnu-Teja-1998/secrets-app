@@ -1,41 +1,60 @@
-<%- include('partials/header') %>
-<div class="container mt-5">
-  <h1>Register</h1>
+<%- include('partials/header_signup') %>
 
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="card">
-        <div class="card-body">
+<body class="text-center ">
 
-          <!-- Makes POST request to /register route -->
-          <form action="/register" method="POST">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" name="username">
+
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-lg-8 data col-md-12">
+          <div>
+            <i class="fas fa-key fa-6x icon"></i>
+            <h1 class="heading">Secrets</h1>
+            <hr>
+            <p class="paragraph">Don't keep your secrets, share them anonymously!</p>
+          </div>
+
+      </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="card-center">
+          <div class="card " style="width: 18rem;">
+            <div class="card-body">
+              <form class="form-signin" action="/register" method="POST">
+
+
+                <i class="fas fa-key fa-5x icon-color"></i>
+
+                <h1 class="h3 mb-3 font-weight-normal">Register Here</h1>
+
+                <div class="email">
+                  <label for="inputEmail" class="sr-only">Email address</label>
+                  <input type="email" id="inputEmail" class="form-control" name="username" placeholder="Email address" required autofocus>
+                </div>
+
+                <div class="password">
+                  <label for="inputPassword" class="sr-only">Password</label>
+                  <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                </div>
+
+                <label class="label">
+                  Already Registered? <a href="/login">click here</a>
+                </label>
+                <button class="btn btn-lg btn-block btn-color" type="submit">Register</button>
+                <!-- <label class="label-2"></label> -->
+                  <hr>
+
+                <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+                  <i class="fab fa-google"></i>
+                  Sign Up with Google
+                </a>
+              </form>
+
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password">
-            </div>
-            <button type="submit" class="btn btn-dark">Register</button>
-          </form>
 
+          </div>
         </div>
+
       </div>
     </div>
-
-    <!-- <div class="col-sm-4">
-      <div class="card social-block">
-        <div class="card-body">
-          <a class="btn btn-block" href="/auth/google" role="button">
-            <i class="fab fa-google"></i>
-            Sign Up with Google
-          </a>
-        </div>
-      </div>
-    </div> -->
-
   </div>
-</div>
-
-<%- include('partials/header') %>
+<%- include('partials/footer_signup') %>
